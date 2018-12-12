@@ -16,9 +16,7 @@ import { connect, Provider } from "react-redux";
 
 class App extends React.Component {
   render() {
-    return <Provider store={store}>
-            <ReduxCounter/>
-          </Provider>;
+    return <div><span>Counter Component should go here!</span></div>;
   }
 }
 
