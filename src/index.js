@@ -1,35 +1,30 @@
-import React from 'react';
-import { render } from 'react-dom';
-import Counter from './Counter';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import { createStore } from "redux";
+import { connect, Provider } from "react-redux";
 
-const initialState = {
-  count: 0
-};
 
-function reducer(state = initialState, action) {
-  switch(action.type) {
-    case 'INCREMENT':
-      return {
-        count: state.count + 1
-      };
-    case 'DECREMENT':
-      return {
-        count: state.count - 1
-      };
-    default:
-      return state;
+
+// Actions
+
+
+// Reducer
+
+
+// Store
+
+
+class App extends React.Component {
+  render() {
+    return <Provider store={store}>
+            <ReduxCounter/>
+          </Provider>;
   }
 }
 
-const store = createStore(reducer);
+const targetElement = document.getElementById("root");
 
-const App = () => (
-  <Provider store={store}>
-    <Counter/>
-  </Provider>
-);
+ReactDOM.render(<App />, targetElement);
 
-render(<App />, document.getElementById('root'));
+
 
